@@ -13,7 +13,6 @@ public class Main {
                 Resistor r = FabriqueResistance.fabriquerResistor(entree);
                 if (r == null)
                     System.out.println("Ceci n'est pas un résistor.");
-
                 else
                     System.out.println("le résistor a une résistance de " +
                             r.getResistance() + " Ω et une tolérance de " + r.getTolerance());

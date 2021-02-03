@@ -2,7 +2,7 @@ import java.util.regex.Pattern;
 
 public class FabriqueResistance {
 
-    public static final String PATRON_RESISTANCE = "[NBROJVbMGL]{2,3}[NBROJVbMoA][NBROJVbMoA]";
+    public static final String PATRON_RESISTANCE = "^[BROJVbMGL][NBROJVbMGL]{1,2}[NBROJVbMoA][NBROJVbMoA]$";
 
     public static Pattern patronCode = Pattern.compile(PATRON_RESISTANCE);
 
@@ -15,7 +15,7 @@ public class FabriqueResistance {
         int mult = code.length() == 5 ? 100 : 10;
 
         valeur += CodeCouleur.valueOf(code.substring(ind, ++ind)).valeur * mult;
-        valeur += CodeCouleur.valueOf(code.substring(ind, ++ind)).valeur * (mult/10.0);
+        valeur += CodeCouleur.valueOf(code.substring(ind, ++ind)).valeur * (mult / 10.0);
         valeur += code.length() == 5 ? CodeCouleur.valueOf(code.substring(ind, ++ind)).valeur : 0;
         valeur *= CodeCouleur.valueOf(code.substring(ind, ++ind)).multiplicateur;
 
