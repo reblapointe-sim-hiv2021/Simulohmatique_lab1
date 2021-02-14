@@ -1,12 +1,14 @@
 import java.util.regex.Pattern;
 
-public class FabriqueResistance {
+public class FabriqueResistor {
 
     public static final String PATRON_RESISTANCE = "^[BROJVbMGL][NBROJVbMGL]{1,2}[NBROJVbMoA][NBROJVbMoA]$";
 
     public static Pattern patronCode = Pattern.compile(PATRON_RESISTANCE);
 
     public static Resistor fabriquerResistor(String code) {
+        if (code == null)
+            return null;
         if (!patronCode.matcher(code).matches())
             return null;
 

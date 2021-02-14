@@ -10,7 +10,7 @@ public class Main {
 
             entree = in.next();
             if (!entree.toUpperCase().startsWith("Q")) {
-                Resistor r = FabriqueResistance.fabriquerResistor(entree);
+                Resistor r = FabriqueResistor.fabriquerResistor(entree);
                 if (r == null)
                     System.out.println("Ceci n'est pas un résistor.");
                 else
